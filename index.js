@@ -132,5 +132,3 @@ mongoose.connect("mongodb://localhost:27017/Node-API")
 .catch((error) => {
     console.log("Database connection failed", error);
 });
-
-// hello
