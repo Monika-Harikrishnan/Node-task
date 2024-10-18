@@ -19,7 +19,7 @@ exports.retrieveRole = async (req, res) => {
         }));
 
         res.status(200).json({
-            message: "Success",
+            message: "Success and Data Retrieved",
             page,
             totalRoles,
             data: transformedRoles
