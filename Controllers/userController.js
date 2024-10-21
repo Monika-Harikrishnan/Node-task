@@ -27,11 +27,11 @@ exports.login = async (req, res) => {
         }
         const user = await User.findOne({ email }).populate('role_id', 'role_name');
         if (!user) {
-            return res.status(400).json({ message: 'Invalid email or password' });
+            return res.status(400).json({ message: 'Invalid email / password' });
         }
         const isPasswordValid = await bcrypt.compare(password, user.password);
         if (!isPasswordValid) {
-            return res.status(400).json({ message: 'Invalid email or password' });
+            return res.status(400).json({ message: 'Invalid email / password' });
         }
         const token = generateToken(user);
         res.status(200).json({
